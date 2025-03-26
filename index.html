@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nassaro Media - Gratis Strategiegesprek</title>
+  <style>
+    /* --- Algemene styling --- */
+    html {
+      scroll-behavior: smooth; /* Zorgt voor soepel scrollen */
+    }
+    body {
+      margin: 0;
+      font-family: "Arial", sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    /* --- Bovenste sectie met menu/CTA-knop --- */
+    .top-banner {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-banner .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #0073e6;
+      text-decoration: none;
+    }
+    .top-banner .menu {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    .top-banner .menu li {
+      display: inline-block;
+    }
+    .top-banner .menu a {
+      color: #0073e6;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    .top-banner .menu a:hover {
+      color: #005bb5;
+    }
+    /* --- Hero sectie --- */
+    .hero-section {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #f0f4f9;
+    }
+    .hero-section h1 {
+      font-size: 36px;
+      color: #002855;
+      margin-bottom: 20px;
+    }
+    .hero-section p {
+      font-size: 18px;
+      line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+    }
+    .hero-section .cta-button {
+      display: inline-block;
+      padding: 14px 28px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #0073e6;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .hero-section .cta-button:hover {
+      background-color: #005bb5;
+      transform: translateY(-2px);
+    }
+    /* --- Info sectie (afbeelding + tekst) --- */
+    .info-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .info-section h2 {
+      font-size: 28px;
+      color: #0073e6;
+      margin-bottom: 10px;
+    }
+    .info-section p {
+      font-size: 17px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+    .info-section img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    /* --- "Plan je gesprek" sectie (anchor) --- */
+    #plan-call {
+      background-color: #ffffff;
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 60px;
+      box-shadow: 0 -1px 6px rgba(0,0,0,0.05);
+    }
+    #plan-call h2 {
+      font-size: 26px;
+      color: #002855;
+      margin-bottom: 20px;
+    }
+    #plan-call p {
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      font-size: 18px;
+      color: #555;
+      line-height: 1.6;
+    }
+    #plan-call .cta-button {
+      display: inline-block;
+      padding: 16px 32px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #fd7e14; /* Oranje */
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    #plan-call .cta-button:hover {
+      background-color: #e06b0f;
+      transform: translateY(-2px);
+    }
+    /* --- FAQ sectie (collapsible) --- */
+    .faq-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    .faq-section h2 {
+      font-size: 24px;
+      color: #0073e6;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .accordion {
+      margin-bottom: 10px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .accordion-header {
+      cursor: pointer;
+      padding: 14px 20px;
+      font-weight: 600;
+      font-size: 18px;
+      background-color: #f0f4f9;
+      color: #002855;
+      border-bottom: 1px solid #e2e2e2;
+      transition: background-color 0.3s;
+    }
+    .accordion-header:hover {
+      background-color: #e9edf3;
+    }
+    .accordion-content {
+      display: none;
+      padding: 0 20px 20px 20px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+    }
+    .accordion.active .accordion-content {
+      display: block;
+    }
+    /* --- Footer --- */
+    .footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Bovenste balk met logo en menu -->
+  <div class="top-banner">
+    <a href="#" class="logo">Nassaro Media</a>
+    <ul class="menu">
+      <li><a href="#plan-call">Plan je gesprek</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero sectie met CTA -->
+<section class="hero-section">
+    <h1>🚀 100.000+ Views Binnen 30 Dagen – Gegarandeerd!</h1>
+    <p>Wil je explosieve groei voor je bedrijf? Met onze data-gedreven marketingstrategieën zorgen wij ervoor dat je binnen één maand minimaal 100.000 views bereikt. Geen loze beloftes – alleen resultaat.</p>
+    <a href="#plan-call" class="cta-button">Plan je gesprek</a>
+</section>
+
+<!-- Info sectie (tekst + grafiek) -->
+<section class="info-section">
+    <h2>📊 10X Meer Bereik Met Onze Geavanceerde Strategieën!</h2>
+    <p>Wij helpen bedrijven groeien met 100% organische content op TikTok, Instagram en Facebook. Geen dure advertenties, maar slimme strategieën die resultaat leveren.</p>
+    
+    <ul class="checklist">
+        <li>✅ 100.000+ views binnen 30 dagen gegarandeerd</li>
+        <li>✅ Organische groei zonder advertenties</li>
+        <li>✅ Meetbare resultaten en transparante rapportages</li>
+    </ul>
+
+    <!-- Dynamische grafiek -->
+    <div class="chart-container">
+        <canvas id="growthChart"></canvas>
+    </div>
+</section>
+
+<!-- Script om een interactieve grafiek te maken met Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('growthChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            datasets: [{
+                label: 'Views Groei',
+                data: [10000, 30000, 70000, 120000], 
+                borderColor: '#007bff',
+                borderWidth: 2,
+                fill: false
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+</script>
+
+
+  <!-- Call-to-Action sectie met anker -->
+  <section id="plan-call">
+    <h2>Wil jij gratis strategisch advies? Plan nu jouw call!</h2>
+    <p>Beantwoord een paar korte vragen en ontdek hoe wij samen jouw groeiambities kunnen waarmaken..</p>
+    <a href="https://form.typeform.com/to/dNIsBMxZ" class="cta-button" target="_blank" rel="noopener">Start Nu</a>
+  </section>
+
+  <!-- FAQ Sectie (Collapsible) -->
+  <div class="faq-section">
+    <h2> ❓ Veelgestelde vragen</h2>
+
+    <div class="accordion">
+      <div class="accordion-header">🔥 Hoe kan Nassaro Media mijn bedrijf laten exploderen?</div>
+      <div class="accordion-content">
+        <p>Wij transformeren bedrijven met virale content, strategische campagnes en slimme marketingfunnels die leads en sales genereren. Meer zichtbaarheid, meer klanten, meer omzet – zonder tijd te verspillen!</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-header">⏳ Hoe lang duurt het strategiegesprek en wat bespreken we?</div>
+      <div class="accordion-content">
+        <p>In slechts 20-30 minuten ontdekken we jouw groeipotentieel, analyseren we je uitdagingen en geven we je een concreet actieplan. Geen vage adviezen, maar direct toepasbare strategieën!</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-header">🎯 Voor wie is dit gesprek een gamechanger?</div>
+      <div class="accordion-content">
+        <p>Ben jij een ambitieuze ondernemer die klaar is om te domineren op TikTok, Instagram en Facebook? Wil je méér klanten zonder duizenden euro’s aan advertenties uit te geven? Dan is dit gesprek voor jou!</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="accordion-header">💰 Wat kost dit gesprek?</div>
+      <div class="accordion-content">
+        <p>Helemaal niets! Dit is 100% gratis en zonder verplichtingen. Wij geloven in resultaten leveren vóórdat je iets betaalt. Alleen als jij overtuigd bent, kunnen we samen groeien.
+</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    &copy; 2025 Nassaro Media - Alle rechten voorbehouden.
+  </div>
+
+  <script>
+    // Script voor FAQ-collapsible
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach((acc) => {
+      acc.addEventListener('click', () => {
+        acc.classList.toggle('active');
+      });
+    });
+  </script>
+  <style>
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Zorgt voor ruimte tussen elementen */
+}
+
+  .checklist {
+    padding-bottom: 30px; /* Extra ruimte onder de lijst */
+}
+
+  .checklist {
+    margin-bottom: 20px; /* Extra ruimte onder de lijst */
+}
+
+.checklist {
+    list-style: none; /* Verwijdert de standaard bullets */
+    padding: 0;
+    margin: 0 auto; /* Centreert de lijst */
+    display: table; /* Zorgt ervoor dat de lijst zich als een blok gedraagt */
+    text-align: left; /* Zorgt ervoor dat de tekst netjes blijft uitlijnen */
+}
+
+.checklist li {
+    display: flex;
+    align-items: center;
+}
+
+  /* Vliegtuig animatie */
+    .plane-container {
+      position: fixed;
+      top: 50%;
+      left: -100px;
+      width: 80px;
+      animation: flyAcross 6s linear 1;
+    }
+
+    .plane-container img {
+      width: 100%;
+    }
+
+    @keyframes flyAcross {
+      0% {
+        transform: translateX(-100px) rotate(0deg);
+      }
+      50% {
+        transform: translateX(50vw) translateY(-50px) rotate(10deg);
+      }
+      100% {
+        transform: translateX(100vw) translateY(0px) rotate(0deg);
+      }
+    }
+  </style>
+
+
+  <!-- Vliegtuig -->
+  <div class="plane-container">
+    <img src="https://assets.onecompiler.app/43cxwvfjz/43cxwre7k/icons8-stats-64.png	" alt="">
+  </div>
+</body>
+</html>
